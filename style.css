@@ -1,0 +1,190 @@
+/* Header styles */
+header {
+  /* Add some space around the header */
+  padding: 20px;
+  /* Light background color for the header */
+  background-color: #e0f7fa;
+  /* Place logo and navigation side by side */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo styles */
+.logo {
+  /* Make the logo text bigger and bold */
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #00796b;
+}
+
+/* Navigation menu styles */
+nav ul {
+  /* Remove default list style */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* Place navigation items in a row */
+  display: flex;
+  gap: 15px; /* Space between links */
+}
+
+nav a {
+  /* Style the navigation links */
+  text-decoration: none;
+  color: #00796b;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+nav a:hover {
+  /* Add a simple hover effect */
+  background-color: #b2dfdb;
+}
+
+/* Introduction section styles */
+.intro {
+  /* Light green background color for the intro section */
+  background-color: #e8f5e9;
+  /* Add space inside the section */
+  padding: 40px 20px;
+  /* Center the text */
+  text-align: center;
+  /* Add some space below the section */
+  margin-bottom: 20px;
+}
+
+.intro h1 {
+  /* Make the headline bigger and bold */
+  font-size: 2em;
+  font-weight: bold;
+  color: #388e3c;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  /* Style the subtext */
+  font-size: 1.1em;
+  color: #555;
+  margin: 0;
+}
+
+/* Destinations section styles */
+.destinations {
+  /* Add space above and below the section */
+  padding: 30px 20px;
+  /* Light blue background for the section */
+  background-color: #f1f8e9;
+  /* Center the text */
+  text-align: center;
+}
+
+.destinations h2 {
+  /* Make the section headline bigger and bold */
+  font-size: 1.5em;
+  color: #388e3c;
+  margin-bottom: 20px;
+}
+
+/* Container for the list of destinations */
+.destination-list {
+  /* Use flex to arrange destinations in a row */
+  display: flex;
+  /* Cards are in a single row, no wrapping */
+  flex-wrap: nowrap;
+  /* Add space between the destination cards */
+  gap: 20px;
+  /* Allow horizontal scrolling if cards don't fit */
+  overflow-x: auto;
+  /* Add some padding at the bottom for scrollbar */
+  padding-bottom: 10px;
+  /* Optional: smooth scrolling on supported browsers */
+  scroll-behavior: smooth;
+}
+
+/* Individual destination styles */
+.destination {
+  /* Add padding and border */
+  padding: 15px;
+  border: 1px solid #b2dfdb;
+  border-radius: 8px;
+  /* Set a fixed width for each card */
+  width: 200px;
+  /* Light background */
+  background-color: #ffffff;
+  /* Add a little shadow for effect */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  /* Prevent cards from shrinking */
+  flex: 0 0 auto;
+}
+
+/* Style for destination images */
+.destination-img {
+  /* Make images fit the card width */
+  width: 100%;
+  /* Set a fixed height for all images */
+  height: 120px;
+  /* Crop images to fill the area */
+  object-fit: cover;
+  /* Add rounded corners to match the card */
+  border-radius: 6px 6px 0 0;
+  /* Add some space below the image */
+  margin-bottom: 10px;
+}
+
+/* Make destination cards scroll vertically on small screens */
+@media (max-width: 600px) {
+  .destination-list {
+    /* Stack cards vertically */
+    flex-direction: column;
+    /* Allow vertical scrolling */
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Set a max height so the section can scroll */
+    max-height: 400px;
+    /* Remove horizontal gap, add vertical gap */
+    gap: 20px;
+  }
+  .destination {
+    /* Make cards take full width on small screens */
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto; /* Center the card */
+  }
+}
+
+/* Call-to-action section styles */
+.cta {
+  /* Add space above and below */
+  padding: 30px 20px;
+  /* Center the text */
+  text-align: center;
+  /* Light background color */
+  background-color: #e0f2f1;
+}
+
+.cta p {
+  /* Make the message a bit larger */
+  font-size: 1.2em;
+  color: #00796b;
+  margin-bottom: 15px;
+}
+
+.cta button {
+  /* Style the button */
+  padding: 10px 24px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #388e3c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cta button:hover {
+  /* Button hover effect */
+  background-color: #2e7031;
+}

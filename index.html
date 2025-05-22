@@ -9,8 +9,119 @@
 </head>
 
 <body>
-  Hello world
+  <!-- Header section starts here -->
+  <header>
+    <!-- Logo for the travel website -->
+    <div class="logo">TravelSite</div>
+    <!-- Simple navigation menu -->
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Header section ends here -->
+
+  <!-- Introduction section starts here -->
+  <section class="intro">
+    <!-- Headline for the site's mission -->
+    <h1>Explore Sustainable Travel</h1>
+    <!-- Subtext describing the site's theme -->
+    <p>Discover eco-friendly destinations and tips for responsible adventures around the world.</p>
+  </section>
+  <!-- Introduction section ends here -->
+
+  <!-- Destinations section starts here -->
+  <section class="destinations">
+    <!-- Headline for the destinations section -->
+    <h2>Eco-Friendly Destinations</h2>
+    <!-- List of destinations in a single row, scrollable horizontally -->
+    <div class="destination-list">
+      <!-- Destination 1 -->
+      <div class="destination">
+        <!-- Picture for Costa Rica -->
+        <img src="img/costa rica.jpg" alt="Costa Rica rainforest" class="destination-img">
+        <h3>Costa Rica</h3>
+        <p>Famous for its rainforests, wildlife, and commitment to sustainability.</p>
+      </div>
+      <!-- Destination 2 -->
+      <div class="destination">
+        <!-- Picture for New Zealand -->
+        <img src="img/new-zealand-in-pictures-beautiful-places-to-photograph-milford-sound.jpg" alt="New Zealand landscape" class="destination-img">
+        <h3>New Zealand</h3>
+        <p>Known for its stunning nature, clean energy, and eco-friendly tourism.</p>
+      </div>
+      <!-- Destination 3 -->
+      <div class="destination">
+        <!-- Picture for Iceland -->
+        <img src="img/Aurora-borealis-peninsula-Snaefellsnes-Iceland-March-2013.webp" alt="Iceland geothermal area" class="destination-img">
+        <h3>Iceland</h3>
+        <p>Offers geothermal wonders and a strong focus on renewable energy.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Destinations section ends here -->
+
+  <!-- Call-to-action section starts here -->
+  <section class="cta">
+    <!-- Message for the user -->
+    <p>Ready to start your eco-friendly adventure?</p>
+    <!-- Button for planning a trip, with an id for JavaScript -->
+    <button id="confetti-btn">Plan Your Trip</button>
+  </section>
+  <!-- Call-to-action section ends here -->
+
   <script src="script.js"></script>
+  <!-- Simple confetti script -->
+  <script>
+    // This function creates simple confetti using colored circles
+    document.getElementById('confetti-btn').onclick = function() {
+      // Create a container for confetti
+      const confettiContainer = document.createElement('div');
+      confettiContainer.style.position = 'fixed';
+      confettiContainer.style.left = 0;
+      confettiContainer.style.top = 0;
+      confettiContainer.style.width = '100vw';
+      confettiContainer.style.height = '100vh';
+      confettiContainer.style.pointerEvents = 'none';
+      confettiContainer.style.zIndex = 9999;
+
+      // Add 50 confetti pieces
+      for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        // Random size and color
+        const size = Math.random() * 12 + 8 + 'px';
+        const colors = ['#388e3c', '#00796b', '#e0f7fa', '#fbc02d', '#e57373'];
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.width = size;
+        confetti.style.height = size;
+        confetti.style.borderRadius = '50%';
+        confetti.style.position = 'absolute';
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.top = '-20px';
+        confetti.style.opacity = 0.8;
+        // Animation
+        confetti.animate([
+          { transform: `translateY(0)`, opacity: 0.8 },
+          { transform: `translateY(${window.innerHeight + 40}px)`, opacity: 0.2 }
+        ], {
+          duration: 1200 + Math.random() * 800,
+          easing: 'ease-out',
+          fill: 'forwards'
+        });
+        confettiContainer.appendChild(confetti);
+      }
+      document.body.appendChild(confettiContainer);
+
+      // Remove confetti after 2 seconds
+      setTimeout(() => {
+        confettiContainer.remove();
+      }, 2000);
+    };
+  </script>
 </body>
 
 </html>
